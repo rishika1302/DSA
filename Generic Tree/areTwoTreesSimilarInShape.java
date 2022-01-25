@@ -42,17 +42,17 @@ public class areTwoTreesSimilarInShape{
     }
     
     public static boolean areSimilar(Node root1, Node root2){
-        if(root1.children.size() != root2.children.size()){
-            return false;
+        if(root1.children.size() != root2.children.size()){ //L1
+            return false; //L2
         }
-        for(int i=0; i<root1.children.size(); i++){
-            Node c1 = root1.children.get(i);
-            Node c2 = root2.children.get(i);
-            if(areSimilar(c1, c2) == false){
-                return false;
+        for(int i=0; i<root1.children.size(); i++){ //L3
+            Node c1 = root1.children.get(i); //L4
+            Node c2 = root2.children.get(i); //L5
+            if(areSimilar(c1, c2) == false){ //L6
+                return false; //L7
             }
         }
-        return true;
+        return true; //L8
     }
 }
 
