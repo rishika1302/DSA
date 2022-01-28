@@ -23,5 +23,6 @@ public class HighestFrequencyCharacter {
             }
         }        
         System.out.println("Max frequency is of " + max);
+        scn.close();
     }    
 }

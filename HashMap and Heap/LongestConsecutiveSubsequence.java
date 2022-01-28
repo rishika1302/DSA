@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class LongestConsecutiveSubsequence {
@@ -48,5 +47,6 @@ public class LongestConsecutiveSubsequence {
             //printing the largest sequence by adding i in maxSP upto i=length of largest sequence
             System.out.print(maxStartingPoint + i +", ");
         }
+        scn.close();
     }
 }
