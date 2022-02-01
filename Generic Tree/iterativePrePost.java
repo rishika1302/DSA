@@ -45,7 +45,7 @@ public class iterativePrePost {
               if(top.state == -1){
                 pre += top.node.data+" ";
                 top.state++;
-              }else if(top.state>=0 && top.state<node.children.size()){
+              }else if(top.state>=0 && top.state<top.node.children.size()){
                 Pair childpair = new Pair(top.node.children.get(top.state), -1);
                 s.push(childpair); 
                 top.state++;
