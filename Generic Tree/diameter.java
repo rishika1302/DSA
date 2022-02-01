@@ -28,31 +28,31 @@ public class diameter {
         } 
         return root;
       }
-      
       static int dia = 0;
-      public static int calcHtretDia(Node root){
-          int lh = -1;
-          int slh = -1;
-          for(Node child : root.children){
-            int ch = calcHtretDia(child);
-            if(ch>lh){
-                lh = ch;
-                slh = lh;
-            }else if(ch>slh){
-                slh = ch;
-            }
+      static int calcHretDia(Node node){
+          int dch = -1;
+          int sdch = -1;
+          for(Node child : node.children){
+              int ch = calcHretDia(child);
+              if(ch>dch){
+                  sdch = dch;
+                  dch = ch;
+              }else if(ch>sdch){
+                  sdch = ch;
+              }
           }
-          int cand = lh+slh+2;
-          if(cand>dia){
-              dia = cand;
+          int check = dch+sdch+2;
+          if(check>dia){
+              dia = check;
           }
-          lh+=1;
-          return lh;
+          dch += 1;
+          return dch;
       }
       public static void main(String[] args) throws Exception {
-        int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
+        int[] arr = {10, 20, -50, -1, 60, -1, -1, 30, -70, -1, 80, -1, 90, -1, -1, 40, -100, -1, -1, -1};
         Node root = construct(arr);
-        System.out.println("Diameter of tree = "+calcHtretDia(root));
+        calcHretDia(root);
+        System.out.println("Diameter of tree = "+dia);
         
       }    
 }
