@@ -1,6 +1,4 @@
 import java.util.*;
-
-import jdk.nashorn.internal.ir.Node;
 public class diameter {
     private static class Node {
         int data;

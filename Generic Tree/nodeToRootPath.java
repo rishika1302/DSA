@@ -19,6 +19,7 @@ public class nodeToRootPath {
         int data = scn.nextInt();
         ArrayList<Integer> path = nodeToRoot(root, data);
         System.out.println(path);
+        scn.close();
     }
 
     public static Node construct(int[] arr){

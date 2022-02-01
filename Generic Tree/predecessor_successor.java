@@ -27,6 +27,7 @@ public class predecessor_successor {
         }else{
             System.out.println("Successor -> " + successor.data);
         }
+        scn.close();
     }
 
     static Node predecessor;

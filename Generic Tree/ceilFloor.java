@@ -16,14 +16,15 @@ public class ceilFloor {
         Node root = construct(arr);
         ceil = Integer.MAX_VALUE;
         floor = Integer.MIN_VALUE; 
-        ceilFloor(root, data);
+        ceil_Floor(root, data);
         System.out.println("Ceil - " + ceil);
         System.out.println("Floor - " + floor);
+        scn.close();
     }
 
     static int ceil;
     static int floor;
-    public static void ceilFloor(Node node, int data){
+    public static void ceil_Floor(Node node, int data){
         if(node.data > data){
             if(node.data < ceil){
                 ceil = node.data;
@@ -35,7 +36,7 @@ public class ceilFloor {
             }
         }
         for(Node child : node.children){
-            ceilFloor(child, data);
+            ceil_Floor(child, data);
         }
     }
 

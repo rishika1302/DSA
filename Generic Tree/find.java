@@ -18,6 +18,7 @@ public class find {
         System.out.println("Enter the data to be found in generic tree : ");
         int data = scn.nextInt();
         System.out.println(Find(root, data));
+        scn.close();
     }
 
     public static Node construct(int[] arr){

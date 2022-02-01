@@ -19,6 +19,7 @@ public class lowestCommonAncestor {
         int d1 = scn.nextInt();
         int d2 = scn.nextInt();
         System.out.println(lca(root, d1, d2));
+        scn.close();
     }
 
     public static Node construct(int[] arr){

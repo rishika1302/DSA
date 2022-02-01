@@ -18,6 +18,7 @@ public class kthLargest {
         Node root = construct(arr);
         int lar = kthLargestElement(root, k);
         System.out.println(lar);
+        scn.close();
     }
     public static Node construct(int[] arr){
         Node root = null;
