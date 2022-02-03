@@ -45,17 +45,17 @@ public class iterativePrePost {
               if(top.state == -1){
                 pre += top.node.data+" ";
                 top.state++;
-              }else if(top.state>=0 && top.state<top.node.children.size()){
+              }else if(top.state == top.node.children.size()){
+                post += top.node.data+" ";
+                s.pop();
+              }else{
                 Pair childpair = new Pair(top.node.children.get(top.state), -1);
                 s.push(childpair); 
                 top.state++;
-              }else{
-                post += top.node.data+" ";
-                s.pop();
               }
           }
-          System.out.println(pre);
-          System.out.println(post);
+          System.out.println("Pre order : "+pre);
+          System.out.println("Post order : "+post);
       }
       public static void main(String[] args) throws Exception {
         int[] arr = {10, 20, -50, -1, 60, -1, -1, 30, 70, -1, -80, 110, -1, -120, -1, -1, 90, -1, -1, 40, -100, -1, -1, -1};
