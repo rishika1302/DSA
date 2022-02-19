@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "Stack and Queue",
         "HashMap and Heap",
-        "Stack and Queue"
+        ""
     ]
 }
