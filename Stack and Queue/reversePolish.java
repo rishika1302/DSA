@@ -1,5 +1,5 @@
 import java.util.*;
-public class polish {
+public class reversePolish {
     public static int operation(int val1, int val2, String optor){
         if(optor.equals("+")){
             return val2+val1;
