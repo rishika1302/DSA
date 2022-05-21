@@ -12,13 +12,10 @@ public class constructor {
         Node root = constructor_euler(arr);
         levelorderLineWise(root);
     }
-
     public static void levelorderLineWise(Node root){
         Queue<Node> queue = new ArrayDeque<Node>();
         Queue<Node> cqueue = new ArrayDeque<Node>();
-
         queue.add(root);
-
         while(queue.size()>0){
             Node temp = queue.remove();
             System.out.print(temp.data+" ");
@@ -33,7 +30,7 @@ public class constructor {
             }
         }
     }
-
+    
     public static Node constructor_euler(int[] arr){
         Node root = null;
         Stack<Node> stack = new Stack<>();
