@@ -60,6 +60,5 @@ public class levelOrder_ZigZag {
                 System.out.println();
             }
         }
-        
     }
 }
