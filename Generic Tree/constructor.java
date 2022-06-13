@@ -9,7 +9,7 @@ public class constructor {
     }
     public static void main(String[] args){
         int[] arr = {10, 20, 50, -1, 60, -1, -1, 30, 70, -1, 80, 110, -1, 120, -1, -1, 90, -1, -1, 40, 100, -1, -1, -1};
-        Node root = constructor_euler(arr);
+        Node root = constructTree(arr);
         levelorderLineWise(root);
     }
     public static void levelorderLineWise(Node root){
@@ -31,24 +31,42 @@ public class constructor {
         }
     }
     
-    public static Node constructor_euler(int[] arr){
+    // public static Node constructor_euler(int[] arr){
+    //     Node root = null;
+    //     Stack<Node> stack = new Stack<>();
+    //     for(int val:arr){
+    //         if(val!=-1){
+    //             Node node = new Node(val);
+    //             stack.push(node);
+    //         }else{
+    //             Node node = stack.pop();
+    //             if(stack.size()>0){
+    //                 Node parent = stack.peek();
+    //                 parent.children.add(node);
+    //             }else{
+    //                 root = node;
+    //             }
+    //         }
+    //     } 
+    //     return root;
+    // }
+
+    public static Node constructTree(int[] arr){
+        Stack<Node> ms = new Stack<>();
         Node root = null;
-        Stack<Node> stack = new Stack<>();
-        for(int val:arr){
-            if(val!=-1){
-                Node node = new Node(val);
-                stack.push(node);
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] != -1){
+                ms.push(new Node(arr[i]));
             }else{
-                Node node = stack.pop();
-                if(stack.size()>0){
-                    Node parent = stack.peek();
-                    parent.children.add(node);
+                Node temp = ms.pop();
+                if(ms.size()>0){
+                    Node parent = ms.peek();
+                    parent.children.add(temp);
                 }else{
-                    root = node;
+                    root = temp;
                 }
             }
-        } 
+        }
         return root;
     }
-
 }
